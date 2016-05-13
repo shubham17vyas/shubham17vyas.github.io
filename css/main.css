@@ -1,0 +1,246 @@
+html, body, header{
+	margin:0px;
+	padding: 0px;
+}
+body{
+	font-family: "Times New Roman", Georgia, Serif;
+}
+
+.main {
+  position: relative;
+}
+
+.main video {
+  height:100%;
+  width:100%;
+}
+.border-bottom{
+	border-bottom:5px solid #00BFFF;
+}
+
+.main .content {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.main a{
+	text-decoration: none;
+
+}
+.main h1 {
+  font-size: 50px;
+  text-shadow: 0 2px 3px rgba(0,0,0,.4);
+  color:white;
+  
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.main a{
+	display: inline-block;
+}
+.main .row{
+	margin-top:70px;
+}
+
+.nav{
+	background: rgba(0,0,0,.5);
+  	color:white;
+  	position: relative;
+}
+.nav img{
+	    height: 36px;
+    	width: 36px;
+      vertical-align: middle;
+      padding-left: 15px;
+}
+.nav ul{
+	list-style: none;
+  display: inline-block;
+}
+.nav li{
+	 display:inline-block;
+  	margin: 0px 30px 0px 0px;
+}
+/*temperory active*/
+.nav a{
+	color:white;
+	padding-top: 5px;
+}
+/* unvisited link */
+.nav >ul >li > a:link {
+    color: white;
+}
+
+/* visited link */
+.nav >ul >li > a:visited, .nav >ul >li > a:hover {
+    border-bottom: 1px solid white;
+}
+.nav >ul >li > a:active{
+	border-bottom: 1px solid white;
+}
+
+
+
+/* mouse over link */
+
+
+/* selected link */
+
+/*need active */
+
+
+/*the flex slider below web design|developer*/
+.slides{
+	text-align: center;
+}
+.fancy{
+	font-weight: bold;
+	text-align: center;
+	color:white;
+	font-style: italic;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+/*slide show */
+#slideshow { 
+    margin: auto; 
+    position: relative; 
+    width: 200px; 
+    height: 60px; 
+    
+    
+}
+#slideshow > div { 
+    position: absolute; 
+   text-align: center;
+}
+.slideshow li{
+	list-style: none;
+	display: inline-block;
+	padding-left: 10px;
+}
+
+/* about me section*/
+.jumbotron{
+	margin-bottom: 0px;
+}
+#mypic{
+	
+	border: 1px solid white;
+	border-radius: 100%;
+}
+
+/*projects section*/
+.projects {
+	background-color:rgb(255, 194, 0);
+	text-align: center;
+	
+	
+}
+.projects h1{
+	border-bottom: 5px solid #00bfff;padding:auto 20px;
+}
+.col-sm-4{
+	border-image-outset:0px;
+	display:inline;
+	box-sizing:border-box;
+	color:rgb(51, 51, 51);
+	text-align:center;
+	vertical-align:middle;
+}
+.magazines{
+	margin-top:-90px;
+}
+.onlineNews{
+	margin-top:-170px;
+}
+.print{
+	margin-top:10px;
+}
+.online{
+	margin-top: 10px;
+}
+.rss{
+	margin-top:-80px;
+}
+.blog{
+	margin-top:10px;
+	margin-bottom: 10px;	
+}
+.contimg{
+	height: 30px;
+  width:30px;
+  margin-right:5px;
+}
+
+
+
+
+
+
+/*contactMe section*/
+.contactMe{
+	background-color:black;
+	
+	color:white;
+	padding:20px 0px;
+}
+.contactMe img{
+	width:150px;
+	height:150px;
+}
+.contact-image{
+	text-align: center;
+	
+	
+}
+.contact-image h4{
+	text-align: center;
+}
+.contactMe h2{
+	text-align: center;
+	border-bottom: 5px solid #00BFFF;
+	padding-bottom: 5px;
+
+}
+
+
+.send{
+	text-align: center;	
+}
+
+/*footer*/
+.footer{
+	background-color: #FFA500;
+}
+.footer a{
+	text-decoration:none;
+	color:black;
+
+}
+.footer li{
+	display:inline-block;
+  	margin: 0px 30px 0px 0px;
+  	padding-top: 10px;
+  
+}
+/* unvisited link */
+.footer ul >li > a:link {
+    color: rgb(51,51,51);
+}
+
+/* visited link */
+.footer ul >li > a:visited, .footer ul >li > a:hover {
+    border-bottom: 1px solid black;
+}
+.footer ul >li > a:active{
+	border-bottom: 1px solid white;
+}
+
+
+
