@@ -5,6 +5,8 @@ html, body, header{
 body{
 	font-family: "Times New Roman", Georgia, Serif;
 }
+/*media query for desktop and laptops*/
+/* Desktops and laptops ----------- */
 
 .main {
   position: relative;
@@ -65,6 +67,7 @@ body{
 .nav li{
 	 display:inline-block;
   	margin: 0px 30px 0px 0px;
+
 }
 /*temperory active*/
 .nav a{
@@ -194,19 +197,12 @@ body{
 	width:150px;
 	height:150px;
 }
-.contact-image{
-	text-align: center;
-	
-	
-}
-.contact-image h4{
+
+.contact-image, .contact-image h4 .contactMe h2{
 	text-align: center;
 }
 .contactMe h2{
-	text-align: center;
-	border-bottom: 5px solid #00BFFF;
-	padding-bottom: 5px;
-
+	margin-left: 43%;
 }
 
 
@@ -227,7 +223,7 @@ body{
 	display:inline-block;
   	margin: 0px 30px 0px 0px;
   	padding-top: 10px;
-  
+  	font-weight: bold;
 }
 /* unvisited link */
 .footer ul >li > a:link {
