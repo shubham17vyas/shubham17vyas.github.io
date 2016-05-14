@@ -141,11 +141,26 @@ body{
 /*resume section*/
 .resume{
 	background-color: black;
-	padding-bottom: 10px;
-}
-.resume h2{
+	padding-bottom: 25px;
 	color:white;
-} 
+	text-align: center;
+}
+.resume li{
+	list-style: none;
+	padding-right: 50px;
+}
+
+
+.resume img{
+	height:225px;
+	width: 190px;
+    border: 1px solid white;
+    border-radius: 10%;
+}
+
+
+
+
 
 
 /*projects section*/
@@ -170,13 +185,13 @@ body{
 	width: 270px;
 	height:200px;
 }
-.magazines{
+.asp{
 	margin-top:-90px;
 }
 .onlineNews{
 	margin-top:-170px;
 }
-.print{
+.pygame{
 	margin-top:10px;
 }
 .online{
