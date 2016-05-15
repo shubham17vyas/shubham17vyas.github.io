@@ -22,78 +22,83 @@
 
 <body>
 
-    <div class="container">
+   
     <!--The main section includes the header video. Name and LinkedIn profile link.-->
-    <div class="main">      
+    <div class="main full-height video parallax"> 
         <!--video mp4-->
         <video autoplay loop muted>
-            <source src="starter.mp4" type="video/mp4">           
+            <source src="starter.mp4" type="video/mp4">    
+
+            "Your browser does not support the <code>video</code> element."
         </video>
         
         <!--navigation bar-->
-        <div class="content container">
+        <div class="wrapper container">
+        
+            <div class="nav nav-pills">
+                <img class="logo nav-logo" src="https://s3.amazonaws.com/codecademy-content/projects/junction/logo.svg" />
+                <ul class="pull-right">
+                    <li class="active"><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contactMe">Contact</a></li>
+                </ul>
+            </div>
+            <a href="#"><h1 id="name">Shubham Vyas</h1></a>
+            
+            
             <div class="row">
-                <div class="nav nav-pills">
-                    <img class="logo nav-logo" src="https://s3.amazonaws.com/codecademy-content/projects/junction/logo.svg" />
-                    <ul class="pull-right">
-                        <li class="active"><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#resume">Resume</a></li>
-                        <li><a href="#contactMe">Contact</a></li>
-                    </ul>
+                <div class="col-md-6 col-md-offset-3 heading">
+
+                    <h1 class="border-bottom">Web Designer | Developer</h1>
                 </div>
-                <a href="#"><h1>Shubham Vyas</h1></a>
-                
-
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-
-                        <h1 class="border-bottom">Web Designer|Developer</h1>
+            </div>
+            <!--corousal slider below th title-->
+            <div class="slides">
+                <div id="slideshow">
+                    <div>
+                        <h3><span class="fancy"> HTML </span></h3>
                     </div>
-                </div>
-                <!--corousal slider below th title-->
-                <div class="slides">
-                    <div id="slideshow">
-                        <div>
-                            <h3><span class="fancy"> HTML </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> CSS </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> JavaScript </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> AngularJS </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> JQuery </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> PHP </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> ASP.net </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> C# </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> SQL </span></h3>
-                        </div>
-                        <div>
-                            <h3><span class="fancy"> Tableau </span></h3>
-                        </div>
-                    </div>                           
-                </div>   
-            </div>       
-        </div>            
+                    <div>
+                        <h3><span class="fancy"> CSS </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> JavaScript </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> AngularJS </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> JQuery </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> PHP </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> ASP.net </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> C# </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> SQL </span></h3>
+                    </div>
+                    <div>
+                        <h3><span class="fancy"> Tableau </span></h3>
+                    </div>
+                </div>                           
+            </div>  
+            
+               
+        </div>
+                                
     </div>
-
+    
     <!--the section containing my descrioption-->
     <a name="about"></a>
     <div class="jumbotron">
         <div class="container">
+
             <div class="row">
                 <div class="col-md-4">
                     <img id="mypic" src="images\formalpic.jpg">
@@ -128,28 +133,28 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <blockquote>
-                            <p><img src="images/doublequotespurple.png">I can't change the direction of the wind, but I can adjust my sails to always reach my destination.</p>
+                            <p><img src="images/doublequotespurple.png">&nbsp;&nbsp;&nbsp;I can't change the direction of the wind, but I can adjust my sails to always reach my destination.</p>
                             <footer>Jimmy Dean  <cite title="Source Title">Source Title: Google</cite></footer>
                         </blockquote>
                     </div>
 
                     <div class="item">
                         <blockquote>
-                            <p><img src="images/doublequotespurple.png">A dream doesn’t become reality through magic; it takes sweat, determination and hard work.</p>
+                            <p><img src="images/doublequotespurple.png">&nbsp;&nbsp;&nbsp;A dream doesn’t become reality through magic; it takes sweat, determination and hard work.</p>
                             <footer>Collin Powel  <cite title="Source Title">Source Title: Google</cite></footer>
                         </blockquote>
                     </div>
 
                     <div class="item">
                         <blockquote>
-                            <p><img src="images/doublequotespurple.png">Hardwork doesn't guarantee success, but improves its chances.</p>
+                            <p><img src="images/doublequotespurple.png">&nbsp;&nbsp;&nbsp;Hardwork doesn't guarantee success, but improves its chances.</p>
                             <footer>B. J Gupta  <cite title="Source Title">Source Title: Google</cite></footer>
                         </blockquote>
                     </div>
 
                     <div class="item">
                         <blockquote>
-                            <p><img src="images/doublequotespurple.png">Somebody told me I'm a failure! I'll prove them wrong! </p>
+                            <p><img src="images/doublequotespurple.png">&nbsp;Somebody told me I'm a failure! I'll prove them wrong! </p>
                             <footer>Unknown <cite title="Source Title">Source Title: Google</cite></footer>
                         </blockquote>
                     </div>
@@ -213,41 +218,47 @@
     <div class="projects">
         
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4"><h1>Projects</h1></div>
+            <div class="row heading">
+                <div class="col-md-4 col-md-offset-4"><h1 class="pro-border-bottom">Projects</h1></div>
             </div>
 <!--Image gallery-->            
             
         
-            <div class="row">
+            <div class="row image-gallery">
                 <div class="col-sm-4">
                     <a href="pages\projects\tableau.html" target="_blank">
-                        <img class="tableau" src="images\projects\tertrendz.jpg"/>
+                        <img class="pro" src="images\projects\tertrendz.jpg"/>
                         <h5><span class="fancy">Tableau</span></h5>
                     </a>
                 </div>
                 <div class="col-sm-4">
                     <a href="pages\projects\asp.html" target="_blank">
-                        <img class="asp" src="https://s3.amazonaws.com/codecademy-content/projects/headlines/p2.jpg"/>
+                        <img class="pro" src="images\projects\tertrendz.jpg"/>
                         <h5><span class="fancy">ASP.net|C#</span></h5>
                     </a>
                 </div>
                 <div class="col-sm-4">
                     <a href="pages\projects\pygame.html" target="_blank">
-                        <img class="pygame" src="https://s3.amazonaws.com/codecademy-content/projects/headlines/p3.jpg"/>
+                        <img class="pro" src="images\projects\tertrendz.jpg"/>
                         <h5><span class="fancy">Python| Pygame</span></h5>
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row image-gallery">
                 <div class="col-sm-4">
-                    <a href="" target="_blank"><img class="print" src="https://s3.amazonaws.com/codecademy-content/projects/headlines/p4.jpg"/></a>
+                    <a href="" target="_blank">
+                        <img class="pro" src="images\projects\tertrendz.jpg"/>
+                    </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="" target="_blank"><img class="magazines" src="https://s3.amazonaws.com/codecademy-content/projects/headlines/p5.jpg"/></a>
+                    <a href="" target="_blank">
+                        <img class="pro" src="images\projects\tertrendz.jpg"/>
+                    </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="" target="_blank"><img class="onlineNews" src="https://s3.amazonaws.com/codecademy-content/projects/headlines/p6.jpg"/></a>
+                    <a href="" target="_blank">
+                        <img class="pro" src="images\projects\tertrendz.jpg"/>
+                    </a>
                 </div>
             </div>
             
