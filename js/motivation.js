@@ -12,7 +12,10 @@ function initializeMotivation() {
   const windowElement = document.querySelector('#motivation-quotes');
   const pagination = document.querySelector('[data-quote-pagination]');
   const toggle = document.querySelector('[data-quote-toggle]');
-  if (!section || !windowElement || !pagination || !toggle) return;
+  const controls = document.querySelector('[data-quote-controls]');
+  const previousButton = document.querySelector('[data-quote-previous]');
+  const nextButton = document.querySelector('[data-quote-next]');
+  if (!section || !windowElement || !pagination || !toggle || !controls || !previousButton || !nextButton) return;
   // HTMLElement[] preserves the source order of the original four quotes.
   const quotes = Array.from(windowElement.querySelectorAll('.quote-card'));
   if (quotes.length < 2) return;
@@ -33,16 +36,34 @@ function initializeMotivation() {
   /**
    * Purpose: render one quote and synchronize its active indicator.
    * Used by: initialization, dot selection, and automatic rotation.
-   * Parameters: index (number), a zero-based quote index.
+   * Parameters: index (number), a zero-based quote index; direction (number), slide direction.
    * Returns: void; invalid indices are ignored. Exceptions: none.
-   * Side effects: changes hidden attributes and pagination state.
+   * Side effects: changes accessible visibility, slides quotes, and updates pagination.
    * Time complexity: O(n). Space complexity: O(1).
    */
-  function showQuote(index) {
+  function showQuote(index, direction = index > currentIndex ? 1 : -1) {
     if (!Number.isInteger(index) || index < 0 || index >= quotes.length) return;
+    // HTMLElement remembers the outgoing slide before selecting its replacement.
+    const outgoing = quotes[currentIndex];
+    const shouldAnimate = index !== currentIndex && !motionPreference.matches;
     currentIndex = index;
     for (let quoteIndex = 0; quoteIndex < quotes.length; quoteIndex += 1) {
-      quotes[quoteIndex].hidden = quoteIndex !== index;
+      for (const animation of quotes[quoteIndex].getAnimations()) animation.cancel();
+      quotes[quoteIndex].classList.toggle('is-active', quoteIndex === index);
+      quotes[quoteIndex].setAttribute('aria-hidden', String(quoteIndex !== index));
+      quotes[quoteIndex].inert = quoteIndex !== index;
+    }
+    if (shouldAnimate) {
+      // KeyframeAnimationOptions gives both slides the same duration in milliseconds.
+      const animationOptions = { duration: 650, easing: 'cubic-bezier(.22,.61,.36,1)' };
+      outgoing.animate([
+        { transform: 'translateX(0)', visibility: 'visible' },
+        { transform: `translateX(${-direction * 100}%)`, visibility: 'visible' }
+      ], animationOptions);
+      quotes[index].animate([
+        { transform: `translateX(${direction * 100}%)` },
+        { transform: 'translateX(0)' }
+      ], animationOptions);
     }
     setActiveDot(index);
   }
@@ -74,6 +95,22 @@ function initializeMotivation() {
   }
 
   /**
+   * Purpose: navigate one slide in either direction, including wraparound.
+   * Used by: previous and next button clicks.
+   * Parameters: event (MouseEvent), identifies the selected navigation button.
+   * Returns: void. Exceptions: none.
+   * Side effects: pauses autoplay and animates the selected quote.
+   * Time complexity: O(n). Space complexity: O(1).
+   */
+  function navigateQuote(event) {
+    // Number specifies backward (-1) or forward (1) movement.
+    const direction = event.currentTarget === previousButton ? -1 : 1;
+    isPaused = true;
+    updatePlayback();
+    showQuote((currentIndex + direction + quotes.length) % quotes.length, direction);
+  }
+
+  /**
    * Purpose: change automatic rotation according to an explicit visitor action.
    * Used by: the quote pause/play button.
    * Parameters: none. Returns: void. Exceptions: none.
@@ -92,6 +129,7 @@ function initializeMotivation() {
    */
   function pauseForMotionChange() {
     isPaused = true;
+    showQuote(currentIndex);
     updatePlayback();
   }
 
@@ -105,7 +143,7 @@ function initializeMotivation() {
     if (isPaused || !isOnScreen || document.hidden ||
         (hoverPreference.matches && section.matches(':hover')) ||
         (section.contains(document.activeElement) && document.activeElement !== toggle)) return;
-    showQuote((currentIndex + 1) % quotes.length);
+    showQuote((currentIndex + 1) % quotes.length, 1);
   }
 
   /**
@@ -120,10 +158,13 @@ function initializeMotivation() {
   }
 
   toggle.addEventListener('click', togglePlayback);
+  previousButton.addEventListener('click', navigateQuote);
+  nextButton.addEventListener('click', navigateQuote);
   motionPreference.addEventListener('change', pauseForMotionChange);
   new IntersectionObserver(updateVisibility).observe(windowElement);
   windowElement.classList.add('is-enhanced');
   toggle.hidden = false;
+  controls.hidden = false;
   showQuote(0);
   updatePlayback();
   window.setInterval(advanceQuote, rotationInterval);

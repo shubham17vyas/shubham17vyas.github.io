@@ -33,7 +33,9 @@ and after manual pointer/wheel interaction. Reduced-motion users start with moti
 Dot controls support Left/Right arrows, Home, and End. Selecting a photo or quote
 pauses its automatic movement. Photo dots replace the scrollbar once JavaScript is ready;
 without JavaScript the native scrollbar remains available. Quotes rotate every eight
-seconds only when visible, with pause/play controls and reduced-motion support.
+seconds only when visible, with horizontal slide transitions and previous/next,
+dot, and pause/play controls beneath the quotes. Reduced-motion preferences disable
+slide animation and start automatic rotation paused.
 
 The original quote wording is retained with minor punctuation corrections. Theme
 labels replace uncertain author credits and the old “Source Title: Google” text.

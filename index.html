@@ -417,7 +417,6 @@
             <div class="container motivation-inner">
                 <div class="motivation-heading">
                     <div><p class="eyebrow">08 / A little perspective</p><h2 id="motivation-title">Words I come back to.</h2></div>
-                    <button class="quote-toggle" type="button" data-quote-toggle aria-controls="motivation-quotes" hidden>Pause quotes</button>
                 </div>
                 <div id="motivation-quotes" class="quote-slides" aria-live="off">
                     <figure class="quote-card">
@@ -441,7 +440,12 @@
                         <figcaption>On consistency</figcaption>
                     </figure>
                 </div>
-                <div class="carousel-dots" data-quote-pagination role="group" aria-label="Choose a motivational quote" hidden></div>
+                <div class="quote-controls" data-quote-controls hidden>
+                    <button class="quote-toggle" type="button" data-quote-previous aria-label="Previous quote" aria-controls="motivation-quotes">←</button>
+                    <div class="carousel-dots" data-quote-pagination role="group" aria-label="Choose a motivational quote" hidden></div>
+                    <button class="quote-toggle" type="button" data-quote-next aria-label="Next quote" aria-controls="motivation-quotes">→</button>
+                    <button class="quote-toggle" type="button" data-quote-toggle aria-controls="motivation-quotes" hidden>Pause quotes</button>
+                </div>
             </div>
         </section>
 

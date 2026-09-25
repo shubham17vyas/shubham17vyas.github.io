@@ -234,14 +234,17 @@ summary:hover { text-decoration: underline; text-underline-offset: 5px; }
 .quote-toggle { flex-shrink: 0; padding: 10px 14px; min-height: 44px; border: 1px solid #819469; border-radius: 24px; background: none; color: var(--paper); font-size: 11px; }
 .quote-toggle:hover { background: #ffffff12; }
 .quote-slides { margin-top: 30px; }
-.quote-slides.is-enhanced { min-height: 195px; }
+.quote-slides.is-enhanced { min-height: 195px; display: grid; overflow: hidden; }
+.quote-slides.is-enhanced .quote-card { grid-area: 1 / 1; min-width: 0; visibility: hidden; }
+.quote-slides.is-enhanced .quote-card.is-active { visibility: visible; }
+.quote-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 8px; }
 .quote-card { display: grid; grid-template-columns: 65px 1fr; align-items: start; gap: 12px 20px; padding-block: 20px; }
 .quote-mark { color: var(--accent); font: 110px/.8 Georgia, serif; }
 .quote-card blockquote { margin: 0; font: 400 clamp(20px, 2.3vw, 28px)/1.6 Georgia, serif; }
 .quote-card figcaption { grid-column: 2; color: #c1cbb8; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
 .motivation-section .carousel-dot { color: #aebda1; }
 .motivation-section .carousel-dot[aria-current="true"] { color: var(--accent); }
-.motivation-section .carousel-dots { margin-top: 8px; }
+.motivation-section .carousel-dots { margin-top: 0; }
 
 .contact-section { padding: 95px 0; background: var(--accent); color: var(--dark); scroll-margin-top: 82px; }
 .contact-inner { position: relative; text-align: center; }
