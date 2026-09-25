@@ -15,7 +15,11 @@ function initializeLifeGallery() {
   const photoGroup = gallery?.querySelector('.life-photo-group');
   const controls = document.querySelector('.life-controls');
   const toggle = document.querySelector('[data-life-toggle]');
-  if (!gallery || !photoGroup || !controls || !toggle || photoGroup.children.length < 2) return;
+  const pagination = document.querySelector('[data-life-pagination]');
+  if (!gallery || !photoGroup || !controls || !toggle || !pagination || photoGroup.children.length < 2) return;
+
+  // HTMLElement[] contains original photographs only; duplicates have no additional dots.
+  const photos = Array.from(photoGroup.querySelectorAll('.life-photo'));
 
   // MediaQueryList objects track reduced motion and genuine pointer hover capabilities.
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -42,6 +46,49 @@ function initializeLifeGallery() {
   // Nullable numbers identify the scheduled frame and the previous timestamp in milliseconds.
   let animationFrameId = null;
   let previousTimestamp = null;
+  // Number[] caches original photo offsets in CSS pixels after layout changes.
+  let photoPositions = [];
+  // Number avoids changing dot attributes when the leading photo has not changed.
+  let currentPhotoIndex = -1;
+  // Function updates the active dot; labels distinguish every photo for assistive technology.
+  const setActiveDot = createCarouselPagination(pagination,
+    photos.map((photo, index) => `Show photo ${index + 1}: ${photo.querySelector('figcaption').textContent.trim()}`),
+    gallery.id, selectPhoto);
+  gallery.classList.add('has-pagination');
+
+  /**
+   * Purpose: navigate directly to a photo and pause automatic motion for inspection.
+   * Used by: the photo dot controls.
+   * Parameters: index (number), a zero-based original photo index.
+   * Returns: void; invalid indices are ignored. Exceptions: none.
+   * Side effects: pauses playback, scrolls the strip, and updates the active dot.
+   * Time complexity: O(1). Space complexity: O(1).
+   */
+  function selectPhoto(index) {
+    if (!Number.isInteger(index) || index < 0 || index >= photoPositions.length) return;
+    isPaused = true;
+    synchronizePlayback();
+    gallery.scrollTo({ left: photoPositions[index], behavior: motionPreference.matches ? 'instant' : 'smooth' });
+    setActiveDot(index);
+  }
+
+  /**
+   * Purpose: keep the current dot synchronized with motion, swipes, and loop wrapping.
+   * Used by: native gallery scroll events and responsive layout updates.
+   * Parameters: none. Returns: void. Exceptions: none.
+   * Side effects: updates pagination attributes when the leading photo changes.
+   * Time complexity: O(n) for n original photos. Space complexity: O(1).
+   */
+  function updateActivePhoto() {
+    if (loopWidth <= 0 || photoPositions.length === 0) return;
+    // Number normalizes repeated content back to its original photo group, in CSS pixels.
+    const position = ((gallery.scrollLeft % loopWidth) + loopWidth) % loopWidth;
+    let index = 0;
+    while (index + 1 < photoPositions.length && photoPositions[index + 1] <= position + 1) index += 1;
+    if (index === currentPhotoIndex) return;
+    currentPhotoIndex = index;
+    setActiveDot(index);
+  }
 
   /**
    * Purpose: advance continuously and wrap at an identical visual position.
@@ -135,10 +182,12 @@ function initializeLifeGallery() {
    * Used by: ResizeObserver for the original photo group.
    * Parameters: none. Returns: void. Exceptions: none.
    * Side effects: measures layout and updates playback scheduling.
-   * Time complexity: O(1). Space complexity: O(1).
+   * Time complexity: O(n) for n original photos. Space complexity: O(n).
    */
   function updateLoopWidth() {
     loopWidth = photoGroup.getBoundingClientRect().width;
+    photoPositions = photos.map(photo => photo.offsetLeft - photos[0].offsetLeft);
+    updateActivePhoto();
     synchronizePlayback();
   }
 
@@ -162,12 +211,13 @@ function initializeLifeGallery() {
   gallery.addEventListener('wheel', pauseForInteraction, { passive: true });
   gallery.addEventListener('focusin', synchronizePlayback);
   gallery.addEventListener('focusout', synchronizePlayback);
+  gallery.addEventListener('scroll', updateActivePhoto, { passive: true });
   document.addEventListener('visibilitychange', synchronizePlayback);
   motionPreference.addEventListener('change', pauseForInteraction);
   new ResizeObserver(updateLoopWidth).observe(photoGroup);
   new IntersectionObserver(updateVisibility).observe(gallery);
   controls.hidden = false;
-  synchronizePlayback();
+  updateLoopWidth();
 }
 
 initializeLifeGallery();

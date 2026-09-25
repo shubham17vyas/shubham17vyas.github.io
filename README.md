@@ -22,13 +22,22 @@ Open http://127.0.0.1:8765/ and stop the server with Ctrl+C. No build or package
 5. About: add the person and context behind the work.
 6. Education: show the academic foundation, with expandable details.
 7. Certifications: surface six relevant courses; preserve all 20 in the expanded list.
-8. Life: add personality through a continuous strip of personal photographs.
-9. Contact: provide a clear next step for hiring and collaboration.
+8. Life: add personality through a continuous photo strip with clickable dot indicators.
+9. Motivation: four favorite quotes from the original portfolio, with rotation and dot navigation.
+10. Contact: provide a clear next step for hiring and collaboration.
 
 Earlier roles and technical details use native disclosures. They remain in the HTML
 and work without JavaScript. The Life strip is manually scrollable without JavaScript;
 automatic motion pauses offscreen, in a background tab, on hover or keyboard focus,
 and after manual pointer/wheel interaction. Reduced-motion users start with motion off.
+Dot controls support Left/Right arrows, Home, and End. Selecting a photo or quote
+pauses its automatic movement. Photo dots replace the scrollbar once JavaScript is ready;
+without JavaScript the native scrollbar remains available. Quotes rotate every eight
+seconds only when visible, with pause/play controls and reduced-motion support.
+
+The original quote wording is retained with minor punctuation corrections. Theme
+labels replace uncertain author credits and the old “Source Title: Google” text.
+In particular, the [Einstein attribution for the creativity quote is unsupported](https://quoteinvestigator.com/2017/05/16/contagious/).
 
 ## SEO implementation
 
@@ -44,7 +53,7 @@ and after manual pointer/wheel interaction. Reduced-motion users start with moti
 ## After publishing
 
 1. Confirm the homepage, `/robots.txt`, `/sitemap.xml`, `/images/formalpic.jpg`,
-   `/images/favicon.svg`, and both JavaScript files return successful responses.
+   `/images/favicon.svg`, and all four JavaScript files return successful responses.
 2. Verify the URL-prefix property `https://shubham17vyas.github.io/` in
    [Google Search Console](https://search.google.com/search-console). Use the verification
    file or meta tag Google supplies to the site owner; no verification token is fabricated here.

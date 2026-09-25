@@ -210,11 +210,38 @@ summary:hover { text-decoration: underline; text-underline-offset: 5px; }
 .life-controls button { padding: 10px 15px; min-height: 44px; border: 1px solid #bdc5b1; border-radius: 24px; background: transparent; color: var(--ink); font-size: 11px; flex-shrink: 0; }
 .life-controls button:hover { background: var(--dark); color: var(--paper); }
 .life-gallery { display: flex; overflow-x: auto; padding-block: 12px; scrollbar-color: #788561 transparent; scrollbar-width: thin; overscroll-behavior-x: contain; }
+.life-gallery.has-pagination { scrollbar-width: none; }
+.life-gallery.has-pagination::-webkit-scrollbar { display: none; }
 .life-photo-group { display: flex; flex: 0 0 auto; gap: 20px; padding-right: 20px; align-items: flex-start; }
 .life-photo { flex: 0 0 auto; margin: 0; width: max-content; }
 .life-photo:nth-child(3n+2) { padding-top: 24px; }
 .life-photo img { display: block; max-width: none; width: auto; height: 275px; border-radius: 9px; object-fit: contain; }
 .life-photo figcaption { padding: 12px 2px 0; color: var(--muted); font: 11px/1.5 "Space Grotesk", sans-serif; max-width: 250px; }
+
+/* Small visible dots retain generous hit areas and keyboard navigation. */
+.carousel-dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; margin-top: 18px; }
+.carousel-dot { display: grid; place-items: center; width: 24px; height: 32px; padding: 0; border: 0; border-radius: 4px; background: transparent; color: var(--muted); }
+.carousel-dot::before { content: ""; width: 7px; height: 7px; border: 1px solid currentColor; border-radius: 50%; transition: background .2s ease, transform .2s ease; }
+.carousel-dot[aria-current="true"] { color: var(--ink); }
+.carousel-dot[aria-current="true"]::before { background: currentColor; transform: scale(1.25); }
+.carousel-dot:hover::before { background: currentColor; }
+
+.motivation-section { background: #263429; color: var(--paper); padding: 60px 0; }
+.motivation-inner { max-width: 1000px; }
+.motivation-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.motivation-heading .eyebrow { color: var(--accent); margin-bottom: 12px; }
+.motivation-heading h2 { font-size: clamp(26px, 3vw, 36px); }
+.quote-toggle { flex-shrink: 0; padding: 10px 14px; min-height: 44px; border: 1px solid #819469; border-radius: 24px; background: none; color: var(--paper); font-size: 11px; }
+.quote-toggle:hover { background: #ffffff12; }
+.quote-slides { margin-top: 30px; }
+.quote-slides.is-enhanced { min-height: 195px; }
+.quote-card { display: grid; grid-template-columns: 65px 1fr; align-items: start; gap: 12px 20px; padding-block: 20px; }
+.quote-mark { color: var(--accent); font: 110px/.8 Georgia, serif; }
+.quote-card blockquote { margin: 0; font: 400 clamp(20px, 2.3vw, 28px)/1.6 Georgia, serif; }
+.quote-card figcaption { grid-column: 2; color: #c1cbb8; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+.motivation-section .carousel-dot { color: #aebda1; }
+.motivation-section .carousel-dot[aria-current="true"] { color: var(--accent); }
+.motivation-section .carousel-dots { margin-top: 8px; }
 
 .contact-section { padding: 95px 0; background: var(--accent); color: var(--dark); scroll-margin-top: 82px; }
 .contact-inner { position: relative; text-align: center; }
@@ -341,6 +368,12 @@ summary:hover { text-decoration: underline; text-underline-offset: 5px; }
     .life-photo-group { gap: 14px; padding-right: 14px; }
     .life-photo figcaption { font-size: 10px; max-width: 210px; }
     .contact-section { padding: 65px 0; }
+    .motivation-section { padding: 44px 0; }
+    .motivation-heading { align-items: flex-start; gap: 14px; }
+    .motivation-heading h2 { font-size: 27px; }
+    .quote-card { grid-template-columns: 28px 1fr; column-gap: 10px; }
+    .quote-mark { font-size: 62px; }
+    .quote-slides.is-enhanced { min-height: 290px; }
     .contact-copy { font-size: 13px; }
     .contact-email { font-size: 18px; }
     .contact-email span { margin-left: 4px; }

@@ -409,12 +409,45 @@
                     </figure>
                     </div>
                 </div>
+                <div class="carousel-dots" data-life-pagination role="group" aria-label="Choose a photo" hidden></div>
+            </div>
+        </section>
+
+        <section id="motivation" class="motivation-section" aria-labelledby="motivation-title">
+            <div class="container motivation-inner">
+                <div class="motivation-heading">
+                    <div><p class="eyebrow">08 / A little perspective</p><h2 id="motivation-title">Words I come back to.</h2></div>
+                    <button class="quote-toggle" type="button" data-quote-toggle aria-controls="motivation-quotes" hidden>Pause quotes</button>
+                </div>
+                <div id="motivation-quotes" class="quote-slides" aria-live="off">
+                    <figure class="quote-card">
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <blockquote><p>I can’t change the direction of the wind, but I can adjust my sails to always reach my destination.</p></blockquote>
+                        <figcaption>On adaptability</figcaption>
+                    </figure>
+                    <figure class="quote-card">
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <blockquote><p>Creativity is contagious. Pass it on.</p></blockquote>
+                        <figcaption>On creativity</figcaption>
+                    </figure>
+                    <figure class="quote-card">
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <blockquote><p>A dream doesn’t become reality through magic; it takes sweat, determination and hard work.</p></blockquote>
+                        <figcaption>On determination</figcaption>
+                    </figure>
+                    <figure class="quote-card">
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <blockquote><p>Hard work doesn’t guarantee success, but improves its chances.</p></blockquote>
+                        <figcaption>On consistency</figcaption>
+                    </figure>
+                </div>
+                <div class="carousel-dots" data-quote-pagination role="group" aria-label="Choose a motivational quote" hidden></div>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
             <div class="container contact-inner">
-                <p class="eyebrow">08 / Start a conversation</p>
+                <p class="eyebrow">09 / Start a conversation</p>
                 <h2>Let’s build<br><em>something that matters.</em></h2>
                 <p class="contact-copy">Hiring an engineer? Planning a product? I’d like to hear what you’re working on.</p>
                 <a class="contact-email" href="mailto:jshubham.vyas@gmail.com">jshubham.vyas@gmail.com <span aria-hidden="true">↗</span></a>
@@ -429,6 +462,8 @@
 
     <footer class="site-footer"><div class="container"><span>© 2026 Shubham Vyas · Bhopal, India</span><a href="#certifications">Certifications</a><a href="#top">Back to top ↑</a></div></footer>
     <script src="js/main.js" defer></script>
+    <script src="js/carousel-pagination.js" defer></script>
     <script src="js/life-gallery.js" defer></script>
+    <script src="js/motivation.js" defer></script>
 </body>
 </html>
