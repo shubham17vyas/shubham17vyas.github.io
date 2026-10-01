@@ -1,0 +1,18 @@
+Dear Hiring Team,
+
+I’m excited to bring my experience in software engineering and technical leadership to a team that values thoughtful solutions and dependable execution. I offer more than eight years of hands-on engineering experience, a grounding in both computer science and business, and a habit of taking responsibility from the first conversation through delivery.
+
+At C Squared Systems in New Hampshire, I built software that connected diverse devices to monitoring and automation systems. My work included a reusable integration framework using HTTP and SNMP that reduced code redundancy by approximately 20%, alongside improvements to data access and extraction performance. Working with engineering, QA, and product colleagues taught me to consider the whole system: how it behaves, how it fails, and how the next developer will maintain it.
+
+At Quilix AI in Bhopal, my responsibilities have grown to include managing a cross-functional team of five, setting coding standards, making architecture decisions, and owning delivery. I led development of BOB, a document-processing system designed to reduce repetitive manual work, and independently closed a client engagement through pitching and requirements scoping. I enjoy connecting the business need to the technical decisions that make a solution useful.
+
+My path began with a computer science engineering degree in Bhopal and continued with a master’s in Management Information Systems at Utah State University. Alongside my studies, I worked in campus service roles and completed a software development internship. Those experiences reinforced my respect for every kind of work and the importance of showing up reliably. After a decade in the United States, I returned to India in July 2025 to build a technology business and take on a new chapter of responsibility.
+
+I keep that curiosity active through independent projects: TradEngine, Glory, and Aarambh, all currently in development. Outside work, I’m a husband and father with an enthusiasm for fitness, sport, and astronomy. Learning, consistency, and perspective matter to me in both life and engineering.
+
+If you’re looking for someone who can understand a problem, make clear technical decisions, support the people doing the work, and stay accountable for the result, I would welcome a conversation. I’m ready to contribute my experience, keep learning, and help your team build software it can stand behind.
+
+Thank you for your consideration.
+
+Shubham Vyas
+shubham17vyas.github.io
