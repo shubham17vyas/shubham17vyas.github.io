@@ -16,15 +16,16 @@ Open http://127.0.0.1:8765/ and stop the server with Ctrl+C. No build or package
 ## Content order
 
 1. Introduction and measured outcomes: establish identity and credibility immediately.
-2. Experience: show professional delivery and engineering impact.
-3. Projects: show initiative, with development status clearly labeled.
-4. Skills: let technical reviewers assess relevant capabilities quickly.
-5. About: add the person and context behind the work.
-6. Education: show the academic foundation, with expandable details.
-7. Certifications: surface six relevant courses; preserve all 20 in the expanded list.
-8. Life: add personality through a continuous photo strip with clickable dot indicators.
-9. Motivation: four favorite quotes from the original portfolio, with rotation and dot navigation.
-10. Contact: provide a clear next step for hiring and collaboration.
+2. Experience: show delivery and engineering impact, with expandable case studies.
+3. Peer recommendations: support the experience with attributed LinkedIn excerpts.
+4. Projects: show initiative, with development goals clearly separated from shipped features; link to this portfolio as a working public code sample.
+5. Skills: let technical reviewers assess relevant capabilities quickly.
+6. About: add the person and context behind the work.
+7. Education: show the academic foundation, with expandable details.
+8. Certifications: surface six relevant courses; preserve all 20 in the expanded list.
+9. Life: add personality through 14 photos with clickable dot indicators.
+10. Motivation: four favorite quotes from the original portfolio, with rotation and dot navigation.
+11. Contact: provide a clear next step for hiring and collaboration.
 
 Earlier roles and technical details use native disclosures. They remain in the HTML
 and work without JavaScript. The Life strip is manually scrollable without JavaScript;
@@ -51,6 +52,59 @@ In particular, the [Einstein attribution for the creativity quote is unsupported
 - Semantic headings, descriptive image alternatives, explicit image dimensions,
   lazy loading below the fold, and no blocking framework or hero video.
 - Legacy HTML routes redirect to the current portfolio; a custom 404 helps visitors recover.
+
+## Performance and maintenance
+
+- Responsive WebP photos provide up to two widths per original, never upscaled.
+  The largest derivative set totals 779,970 bytes versus 1,472,791 bytes for the
+  originals (47% smaller). This compares image files, not measured page-load time.
+  Smaller screens can select smaller files. Original JPEGs remain available as source assets.
+- The two Latin variable fonts are served locally (59,220 bytes combined), with
+  `font-display: swap` and a preload for the heading font. There are no external font
+  requests. Font files originate from Google Fonts; the SIL Open Font Licenses are
+  included in `fonts/`.
+- A selectable-text, one-page PDF resume replaces the Word download in the main CTAs.
+  Its builder uses the supplied career background; it does not extract private contact
+  information from older documents. Update the builder alongside the homepage.
+- Print styles suppress the moving galleries and decorative artwork.
+- No analytics or tracking scripts are loaded. Collection requires an actual configured
+  destination; this change does not invent an analytics account or send visitor data elsewhere.
+
+Run checks without additional packages:
+
+```bash
+python scripts/check_site.py
+node --check js/main.js
+node --check js/carousel-pagination.js
+node --check js/life-gallery.js
+node --check js/motivation.js
+git diff --check
+```
+
+To regenerate image derivatives or the PDF, install the development-only dependencies:
+
+```bash
+python -m pip install -r scripts/requirements.txt
+python scripts/optimize_images.py
+python scripts/build_resume.py
+python scripts/check_site.py
+```
+
+Pillow handles image resizing/encoding; ReportLab creates the PDF with selectable text.
+Neither library runs in the website. Add new photos as original JPEGs and HTML entries
+before rerunning the image task; it also refreshes existing derivatives in place.
+
+## Content evidence
+
+- Career outcomes and project direction come from the owner's supplied background.
+  The performance percentages are approximate, owner-reported outcomes, not public benchmarks.
+  Private project code and unverified demos are not exposed or claimed.
+- Jason LeMauk's September 11, 2023 and Arun Upadhyay's February 8, 2023 recommendations
+  were read in the [received LinkedIn recommendations](https://www.linkedin.com/in/shubham-vyas-0812a6133/details/recommendations/)
+  on September 25, 2026. Short excerpts preserve their words; the ellipsis marks a shortened
+  sentence. The explanatory text is a paraphrase. Author links and working relationships
+  are shown without implying that either person directly managed Shubham.
+- Responsive image implementation follows [MDN's image guidance](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images).
 
 ## After publishing
 

@@ -1,3 +1,7 @@
+/* Locally hosted Latin fonts avoid external font requests; licenses are in fonts/. */
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("../fonts/dm-sans-latin.woff2") format("woff2"); }
+@font-face { font-family: "Space Grotesk"; font-style: normal; font-weight: 500 700; font-display: swap; src: url("../fonts/space-grotesk-latin.woff2") format("woff2"); }
+
 /* Shared palette and sizing keep the page visually consistent. */
 :root {
     --ink: #20251f;
@@ -51,7 +55,7 @@ h2 em { color: var(--muted); font-style: normal; }
 .hero-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; padding-block: 76px 70px; }
 .hero .eyebrow { color: #d1d8c9; display: flex; align-items: center; gap: 9px; letter-spacing: .09em; }
 .status-dot, .project-status { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-h1 { margin-top: 25px; font-size: clamp(48px, 5.5vw, 78px); line-height: 1.02; letter-spacing: -.07em; }
+h1 { margin-top: 25px; font-size: clamp(42px, 4.4vw, 63px); line-height: 1.08; letter-spacing: -.055em; }
 h1 em { color: var(--accent); font-style: normal; }
 .hero-name { display: block; margin-bottom: 18px; color: #d1d6cc; font-size: 18px; letter-spacing: -.02em; line-height: 1.4; }
 .hero-copy { max-width: 490px; margin-top: 24px; color: #d1d6cc; font-size: 17px; line-height: 1.75; }
@@ -101,6 +105,9 @@ summary::marker { color: #758e47; }
 summary:hover { text-decoration: underline; text-underline-offset: 5px; }
 .work-details > div { max-width: 650px; padding-block: 6px; color: var(--muted); font-size: 13px; }
 .work-details p + p { margin-top: 12px; }
+.integration-flow { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 18px 0; list-style-position: inside; }
+.integration-flow li { padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--cream); font-size: 11px; }
+.work-details .measurement-note { font-size: 11px; }
 .career-details { margin-top: 24px; }
 .career-details > summary, .all-certifications > summary { padding: 20px 24px; border: 1px solid var(--line); border-radius: 8px; }
 .career-details > summary span, .all-certifications > summary span { margin-left: 14px; color: var(--muted); font-size: 12px; font-weight: 400; }
@@ -110,6 +117,20 @@ summary:hover { text-decoration: underline; text-underline-offset: 5px; }
 .early-career-grid h3 { font-size: 20px; line-height: 1.3; margin: 12px 0; }
 .early-career-grid p + p { margin-top: 12px; }
 .early-career-grid .role-type { color: var(--muted); font-size: 11px; }
+
+/* Attributed recommendations add independent evidence before ongoing projects. */
+.recommendations-section { padding-block: 65px; background: #e6eadc; }
+.recommendation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.recommendation-card { display: flex; flex-direction: column; gap: 20px; padding: 30px; border: 1px solid #c5cdb6; border-radius: 12px; background: var(--paper); }
+.recommendation-card blockquote { margin: 0; font: 24px/1.5 Georgia, serif; }
+.recommendation-context { font-size: 13px; color: var(--muted); }
+.recommendation-card figcaption { display: grid; gap: 4px; margin-top: auto; }
+.recommendation-card figcaption a { font-size: 14px; font-weight: 700; }
+.recommendation-card figcaption span { font-size: 11px; color: var(--muted); }
+.recommendations-section > .container > .text-link { margin-top: 24px; }
+.source-strip { padding-block: 28px; background: var(--cream); border-top: 1px solid var(--line); }
+.source-strip .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+.source-strip p:not(.eyebrow) { margin-top: 6px; font-size: 14px; color: var(--muted); }
 
 /* Decorative project diagrams avoid suggesting unshipped product screens. */
 .work-section { background: var(--cream); }
@@ -386,4 +407,29 @@ summary:hover { text-decoration: underline; text-underline-offset: 5px; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition: none !important; animation: none !important; }
     .project-card:hover, .project-card:focus-within, .button:hover { transform: none; }
+}
+@media (max-width: 600px) {
+    .recommendation-grid { grid-template-columns: 1fr; }
+    .recommendation-card { padding: 24px; }
+    .recommendation-card blockquote { font-size: 22px; }
+    .recommendations-section { padding-block: 48px; }
+    .hero h1 { font-size: clamp(33px, 9vw, 48px); }
+}
+/* A readable paper copy removes moving and decorative content. */
+@media print {
+    body { background: white; color: black; font-size: 11pt; }
+    .site-header, .skip-link, .hero-portrait, .hero-actions, .hero-meta,
+    #life, #motivation, .project-art, .about-image-wrap, .site-footer { display: none !important; }
+    .container { width: 100%; }
+    .section, .contact-section, .recommendations-section { padding: 18px 0; }
+    .hero { background: white; color: black; }
+    .hero-content { display: block; padding: 0 0 20px; }
+    .hero-copy, .hero-name, .hero h1 em, .hero .eyebrow, .hero-specialties { color: black; }
+    .impact-strip { color: black; padding: 15px 0; }
+    .impact-strip p, .impact-strip p span, .impact-strip strong span { color: black; }
+    .project-grid, .recommendation-grid { display: block; }
+    .project-card, .recommendation-card, .education-card { break-inside: avoid; margin-bottom: 12px; }
+    .project-body > p:not(.project-type) { min-height: 0; }
+    h2 { font-size: 24pt; }
+    a { text-decoration: underline; }
 }
