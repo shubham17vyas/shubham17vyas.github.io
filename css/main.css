@@ -488,18 +488,15 @@ summary:hover { text-decoration: underline; text-underline-offset: 5px; }
 .profile-description { color: var(--muted); font-size: 14px; }
 .profile-destination { margin-top: auto; font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
 
-/* A native disclosure keeps the letter readable without requiring JavaScript. */
+/* A short hiring summary stays visible beside its download button. */
 .cover-letter-section { background: var(--cream); }
 .hiring-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; }
 .hiring-intro h2 { margin-block: 18px 24px; }
 .hiring-intro > p:not(.eyebrow) { max-width: 360px; color: var(--muted); }
 .hiring-intro .button { margin-top: 24px; }
 .cover-letter { min-width: 0; padding: 8px 30px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
-.cover-letter > summary { padding-block: 18px; }
-.letter-body { padding-block: 14px 24px; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
-.letter-body p + p { margin-top: 20px; }
-.letter-signature { font-weight: 700; }
-.letter-signature a { font-size: 13px; font-weight: 400; }
+.letter-body { padding-block: 16px; font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
+.letter-body p + p { margin-top: 16px; }
 @media (max-width: 900px) {
     .hiring-grid { grid-template-columns: 1fr; gap: 30px; }
 }

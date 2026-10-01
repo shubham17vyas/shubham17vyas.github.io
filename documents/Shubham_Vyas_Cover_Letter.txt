@@ -1,18 +1,7 @@
-Dear Hiring Team,
+I don’t just write code—I take ownership of problems and carry them through to a working result.
 
-I’m excited to bring my experience in software engineering and technical leadership to a team that values thoughtful solutions and dependable execution. I offer more than eight years of hands-on engineering experience, a grounding in both computer science and business, and a habit of taking responsibility from the first conversation through delivery.
+Over the past eight+ years, I’ve worked across software engineering, system integration, product delivery, and technical leadership. At C Squared Systems, I built reusable device integrations that cut code redundancy by roughly 20% and improved backend performance. At Quilix AI, I lead a cross-functional team, make architecture decisions, work directly with stakeholders, and helped build BOB to eliminate repetitive manual work.
 
-At C Squared Systems in New Hampshire, I built software that connected diverse devices to monitoring and automation systems. My work included a reusable integration framework using HTTP and SNMP that reduced code redundancy by approximately 20%, alongside improvements to data access and extraction performance. Working with engineering, QA, and product colleagues taught me to consider the whole system: how it behaves, how it fails, and how the next developer will maintain it.
+What I bring is a useful mix: strong technical depth, business understanding, and the willingness to take responsibility when things get messy—which, in software, they eventually do.
 
-At Quilix AI in Bhopal, my responsibilities have grown to include managing a cross-functional team of five, setting coding standards, making architecture decisions, and owning delivery. I led development of BOB, a document-processing system designed to reduce repetitive manual work, and independently closed a client engagement through pitching and requirements scoping. I enjoy connecting the business need to the technical decisions that make a solution useful.
-
-My path began with a computer science engineering degree in Bhopal and continued with a master’s in Management Information Systems at Utah State University. Alongside my studies, I worked in campus service roles and completed a software development internship. Those experiences reinforced my respect for every kind of work and the importance of showing up reliably. After a decade in the United States, I returned to India in July 2025 to build a technology business and take on a new chapter of responsibility.
-
-I keep that curiosity active through independent projects: TradEngine, Glory, and Aarambh, all currently in development. Outside work, I’m a husband and father with an enthusiasm for fitness, sport, and astronomy. Learning, consistency, and perspective matter to me in both life and engineering.
-
-If you’re looking for someone who can understand a problem, make clear technical decisions, support the people doing the work, and stay accountable for the result, I would welcome a conversation. I’m ready to contribute my experience, keep learning, and help your team build software it can stand behind.
-
-Thank you for your consideration.
-
-Shubham Vyas
-shubham17vyas.github.io
+I ask the right questions, build maintainable solutions, support the people around me, and stay accountable for the outcome. If you need someone who can understand the problem, work with the team, make decisions, and actually get things shipped, that’s where I do my best work.
